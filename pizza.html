@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Black Goose Bistro | Pizza-on-Demand</h1>
+    <p>Our 12" wood-fired pizzas are available for delivery. Build your own custom pizza and we'll deliver it within an hour.</p>
+
+    <section style="display: flex; flex-direction: column; align-items: flex-start; margin: 0 auto;">
+        <form action="" method="post">
+            <div style="margin-bottom: 10px;">
+                <div><h2><b>Your Information</b></h2></div>
+                <div>
+                    <label for="name">Your Name :</label>
+                    <input type="text" id="name" style="width: 100%;" required>
+                </div>
+                <div>
+                    <label for="address">Address :</label>
+                    <input type="text" id="address" style="width: 100%;" required>
+                </div>
+                <div>
+                    <label for="tel">Telephone Number :</label>
+                    <input type="number" id="telphone" style="width: 100%;" required>
+                </div>
+                <div>
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" style="width: 100%;" required>
+                </div>
+                <div>
+                    <label for="">Delivery Instructions :</label>
+                </div>
+                <div>
+                    <textarea id="delivery-instructions" cols="40" rows="8" maxlength="400" style="width: 100%;"></textarea>
+                </div>
+            </div>
+        </form>
+    </section>
+    
+
+    <section>
+        <h3><b>Design You Dream Pizza : </b></h3>
+        <h3>Pizza Specs</h3>
+
+        <h3>Crust (Choose One):</h3>
+
+            <div>
+                <div>
+                    <input type="radio" name="pizza-crust" value="classic-white" required> Classic white
+                    <br>               
+                    <input type="radio" name="pizza-crust" value="multigrain" required> Multigrain      
+                    <br>       
+                    <input type="radio" name="pizza-crust" value="cheese-stuffed-crust" required> Cheese-stuffed crust
+                    <br>
+                    <input type="radio" name="pizza-crust" value="gluten-free" required> Gluten-free
+                </div>
+            </div>
+
+                <div>
+                <h3>Toppings (Choose as many as you want):</h3>
+
+                <div>
+                    <input type="checkbox" checked> Red sauce
+                </div>
+
+                <div>
+                    <input type="checkbox"> White sauce
+                </div>
+
+                <div>
+                    <input type="checkbox"> Mozarella cheese
+                </div>
+
+                <div>
+                    <input type="checkbox"> Pepperoni
+                </div>
+
+                <div>
+                    <input type="checkbox"> Mushrooms
+                </div>
+                
+                <div>
+                    <input type="checkbox"> Peppers
+                </div>
+                
+                <div>
+                    <input type="checkbox"> Anchovies
+                </div>
+                </div>
+
+                <div>
+                    <h3>Number</h3>
+
+                    <div>
+                        <label for="">How many pizzas :</label>
+                        <select name="" id="">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div>
+                </div>
+
+                <br>
+
+                <button type="submit">Submit</button>
+                <input type="reset">
+        </form>
+    </section>
+</body>
+</html>

@@ -1,20 +1,100 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project View</title>
-</head>
-<body>
-    <h1>Welcome</h1>
-    <h2><b>This is my project view</b></h2>
-
-    <section>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="jumbotron">
+        <h1>
+          <!-- <svg
+            style="height: 100px"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 640 512"
+          > -->
+            <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M560 160A80 80 0 1 0 560 0a80 80 0 1 0 0 160zM55.9 512H381.1h75H578.9c33.8 0 61.1-27.4 61.1-61.1c0-11.2-3.1-22.2-8.9-31.8l-132-216.3C495 196.1 487.8 192 480 192s-15 4.1-19.1 10.7l-48.2 79L286.8 81c-6.6-10.6-18.3-17-30.8-17s-24.1 6.4-30.8 17L8.6 426.4C3 435.3 0 445.6 0 456.1C0 487 25 512 55.9 512z"
+            />
+          </svg>
+        </h1>
+        <h1>Welcome!</h1>
+        <p>This is my project view website</p>
+      </div>
+      <nav>
         <ul>
-            <li>Gallery Wishlist : <a href="my-gallery.html">click here!</a></li>
-            <li>Pizza Delivery : <a href="pizza.html">click here!</a></li>
+          <li><a href="#gallery">Gallery Wishlist</a></li>
+          <li><a href="#pizza">Pizza Delivery</a></li>
         </ul>
-    </section>
+      </nav>
+    </header>
+    <main style="background-color: white;">
 
-</body>
+      <div id="content">
+        <section id="gallery">
+          <div class="card">
+            <h2>My Gallery Wishlist</h2>
+            <img
+              src="assets/images/gallery.jpg"
+              style="border-radius: 20px; width: 100%; height: auto"
+              alt="gallery"
+            />
+           <ul>
+            <br>
+            <li><b>Project Name : Gallery Wishlist</b></li>
+            <li><b>Made by : Alif Abyan Syafiq</b></li>
+            <li><b>Project Link : </b><a href="my-gallery.html">click here!</a></li>
+           </ul>
+          </div>
+        </section>
+
+        <section id="pizza">
+          <div class="card">
+            <h2>Pizza Delivery</h2>
+            <img
+              src="assets/images/pizza.jpg"
+              style="border-radius: 20px; width: 100%; height: auto"
+              alt="pizza"
+            />
+
+            <ul>
+                <br>
+                <li><b>Project Name : Pizza Delivery</b></li>
+                <li><b>Made by : Alif Abyan Syafiq</b></li>
+                <li><b>Project Link : </b><a href="pizza.html">click here!</a></li>
+            </ul>
+           
+          </div>
+        </section>
+      </div>
+      <aside>
+        <article class="card">
+          <center>
+            <h2>About Me</h2>
+          </center>
+          <figure>
+            <img src="assets/images/profile.jpg" class="featured-image" />
+          </figure>
+          <table style="text-align: left">
+            <tr>
+              <th>Nama : Alif Abyan Syafiq</th>
+            </tr>
+            <tr>
+              <th>NIM : 0110223097</th>
+            </tr>
+            <tr>
+              <th>Rombel : TI 2303</th>
+            </tr>
+          </table>
+        </article>
+      </aside>
+    </main>
+    <br />
+    <footer>
+      <center>&copy; <b>A</b>lif <b>A</b>byan <b>S</b>yafiq</center>
+    </footer>
+  </body>
 </html>

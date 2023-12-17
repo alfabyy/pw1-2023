@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hitung Luas dan Keliling Lingkaran</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .calculator {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            width: 100%;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"] {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            background-color: #f9f9f9;
+            color: #333;
+            font-weight: bold;
+            cursor: not-allowed;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+        }
+    </style>
+
+</head>
+<body>
+<div class="calculator">
+    <h2>Hitung Luas dan Keliling Lingkaran</h2>
+    <form id="circleForm">
+        <label for="radius">Jari-jari Lingkaran:</label>
+        <input type="number" id="radius" name="radius" min="0" step="any" onchange="hitung()">
+        <br><br>
+        <label for="resultArea">Luas Lingkaran:</label>
+        <input type="text" id="resultArea" readonly>
+        <br><br>
+        <label for="resultCircumference">Keliling Lingkaran:</label>
+        <input type="text" id="resultCircumference" readonly>
+    </form>
+</div>
+
+<script>
+    function hitung() {
+        const radius = parseFloat(document.getElementById('radius').value);
+
+        if (!isNaN(radius)) {
+            const area = Math.PI * radius * radius;
+            const circumference = 2 * Math.PI * radius;
+
+            document.getElementById('resultArea').value = area.toFixed(2);
+            document.getElementById('resultCircumference').value = circumference.toFixed(2);
+        } else {
+            document.getElementById('resultArea').value = '';
+            document.getElementById('resultCircumference').value = '';
+        }
+    }
+</script>
+</body>
+</html>

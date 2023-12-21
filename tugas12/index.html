@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    .card {
+      width: 300px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+    }
+    .card h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .card form {
+      text-align: center;
+    }
+    .card input[type="text"],
+    .card input[type="password"],
+    .card button {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    .card button {
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+    .card button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+      </div>
+      <button type="button" onclick="authenticate()">Login</button>
+    </form>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>

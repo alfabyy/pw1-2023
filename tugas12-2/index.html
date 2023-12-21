@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Validation Form</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 320px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+      width: calc(100% - 12px);
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 8px 15px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .error-message {
+      color: red;
+      margin-bottom: 15px;
+    }
+
+    #displayData {
+      margin-top: 15px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+    <div class="container">
+        <form id="validationForm">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required maxlength="30">
+          </div>
+      
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="departureTime">Departure Time :</label>
+            <input type="text" id="departureTime" required pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" placeholder="(24-hour format)">
+          </div>
+      
+          <div class="form-group">
+            <label for="numTickets">Number of Tickets :</label>
+            <input type="number" id="numTickets" required min="1" max="10" placeholder="(1-10)">
+          </div>
+      
+          <button type="button" onclick="validateForm()">Submit</button>
+        </form>
+      
+        <div id="errorMessages" class="error-message"></div>
+        <div id="displayData"></div>
+      </div>
+      
+      <script>
+        function validateForm() {
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const departureTime = document.getElementById('departureTime').value;
+          const numTickets = document.getElementById('numTickets').value;
+      
+          const errorMessages = [];
+      
+          if (name.length === 0 || name.length > 30) {
+            errorMessages.push('Name is required and should be maximum 30 characters.');
+          }
+      
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            errorMessages.push('Please enter a valid email address.');
+          }
+      
+          const timeRegex = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/;
+          if (!timeRegex.test(departureTime)) {
+            errorMessages.push('Please enter a valid 24-hour format for departure time.');
+          }
+      
+          if (numTickets < 1 || numTickets > 10 || !Number.isInteger(parseInt(numTickets))) {
+            errorMessages.push('Number of tickets should be an integer between 1 and 10.');
+          }
+      
+          const errorDisplay = document.getElementById('errorMessages');
+          const displayData = document.getElementById('displayData');
+      
+          if (errorMessages.length > 0) {
+            errorDisplay.innerHTML = errorMessages.join('<br>');
+            displayData.innerHTML = '';
+          } else {
+            errorDisplay.innerHTML = '';
+            displayData.innerHTML = `
+              <h2>Submitted Data :</h2>
+              <p><strong>Name :</strong> ${name}</p>
+              <p><strong>Email :</strong> ${email}</p>
+              <p><strong>Departure Time :</strong> ${departureTime}</p>
+              <p><strong>Number of Tickets :</strong> ${numTickets}</p>
+            `;
+
+            alert('Data submitted successfully!');
+          }
+        }
+      </script>
+
+</body>
+</html>
